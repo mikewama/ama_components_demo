@@ -1,20 +1,15 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components'
-import { Theme } from '@amaabca/react-components'
-import { Button, Header } from '@amaabca/react-components'
+import { Route, Switch } from 'react-router-dom';
+import BasicLayout from './containers/BasicLayout/BasicLayout';
 
 function App() {
   return (
-    <ThemeProvider theme={Theme}>
       <div>
-        <Header>
-          <p>
-            This is in the header
-          </p>
-          <Button>Check out this button</Button>
-        </Header>
+        <Switch>
+          <Route path="/basic" component={BasicLayout} />
+          <Route path="/" exact component={BasicLayout} />
+        </Switch>
       </div>
-    </ThemeProvider>
   );
 }
 
